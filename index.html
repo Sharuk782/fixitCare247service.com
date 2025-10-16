@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="Title">FixitCare247Service.com | Professional Repair Services</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles for a Technical Look */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f7f7;
+        }
+        .hero-bg {
+            background-color: #1a237e; /* Deep Indigo */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23283593' fill-opacity='0.4'%3E%3Cpath d='M36 34L26 24 0 50 10 60zM42 42L52 32 60 40 50 50zM60 0L30 30 50 50 60 50z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+        }
+        .trust-icon {
+            color: #ffb300; /* Amber for accent */
+        }
+        /* Hide mobile menu initially */
+        #mobile-menu {
+            display: none;
+        }
+        /* Style for the Call/Email links in footer */
+        .footer-link {
+            transition: color 0.2s;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-40">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Logo & Language Selector (Updated Name) -->
+            <div class="flex items-center space-x-4">
+                <div class="flex items-center space-x-2">
+                    <img 
+                        src="uploaded:1000001983.jpg-0eed2ea6-5070-445d-984b-9c37ad7d8799" 
+                        alt="FixitCare Logo"
+                        class="h-10 w-auto"
+                    >
+                    <!-- Updated Brand Name for better display -->
+                    <span class="text-2xl font-black text-indigo-800 tracking-tight">FixitCare 24/7 Service</span>
+                </div>
+
+                <!-- Language Selector Dropdown -->
+                <div class="hidden sm:block">
+                    <select id="language-selector" class="pl-2 pr-4 py-1 text-sm border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 bg-gray-50 cursor-pointer">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                        <option value="ta">தமிழ் (Tamil)</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Desktop Nav, Location & Contact -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <!-- Location -->
+                <div class="flex items-center text-sm text-gray-600 cursor-pointer hover:text-indigo-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.7-8-12c0-4.4 3.6-8 8-8s8 3.6 8 8c0 7.3-8 12-8 12z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="font-medium" data-i18n="City">Service City:</span> <span class="font-semibold text-indigo-700 ml-1">New Delhi</span>
+                    <button class="ml-2 text-xs text-amber-500 hover:text-amber-600" data-i18n="Change">Change</button>
+                </div>
+                
+                <a href="#" class="text-sm font-medium hover:text-indigo-600" data-i18n="Nav1">Repair Services</a>
+                <a href="#" class="text-sm font-medium hover:text-indigo-600" data-i18n="Nav2">Become a Pro</a>
+                <!-- Updated Phone Number Link -->
+                <a href="tel:+919845960784" class="text-sm font-medium text-indigo-600 hover:text-amber-500 transition border border-indigo-200 rounded-full px-3 py-1 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1 fill-current" viewBox="0 0 24 24"><path d="M20 15.5l-2-2a1 1 0 00-.7-.3c-.2 0-.4 0-.5.1l-2 1.5c-.3.2-.6.2-.9.1-.8-.4-1.6-.9-2.4-1.7-.8-.8-1.3-1.6-1.7-2.4-.1-.3-.1-.6.1-.9l1.5-2c.1-.1.1-.3.1-.5 0-.2-.1-.4-.3-.7l-2-2a1 1 0 00-1.4 0l-1.5 1.5c-.4.4-.7.9-.9 1.4-.2.5-.2 1.1 0 1.6l2 4c.6 1.2 1.5 2.2 2.7 3.4 1.2 1.2 2.2 2.1 3.4 2.7l4 2c.5.2 1.1.2 1.6 0 .5-.2 1-.5 1.4-.9l1.5-1.5a1 1 0 000-1.4z"/></svg>
+                    <span data-i18n="ContactPhone">+91 98459-60784</span>
+                </a>
+                <button class="px-4 py-2 bg-amber-500 text-white text-sm font-semibold rounded-lg shadow-md hover:bg-amber-600 transition transform hover:scale-105" data-i18n="Login">
+                    Login / Sign Up
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="lg:hidden p-2 rounded-lg text-indigo-700 hover:bg-gray-100 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu (Hidden by default) -->
+        <nav id="mobile-menu" class="lg:hidden bg-indigo-50 border-t border-indigo-100">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                 <div class="sm:hidden px-3 pt-2 pb-1">
+                    <label for="mobile-language-selector" class="block text-xs font-medium text-gray-700 mb-1">Select Language</label>
+                    <select id="mobile-language-selector" class="w-full pl-2 pr-4 py-1 text-sm border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500 bg-white cursor-pointer">
+                        <option value="en">English</option>
+                        <option value="hi">हिन्दी (Hindi)</option>
+                        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+                        <option value="ta">தமிழ் (Tamil)</option>
+                    </select>
+                </div>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-700 rounded-md hover:bg-indigo-200" data-i18n="Nav1">Repair Services</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-700 rounded-md hover:bg-indigo-200" data-i18n="Nav2">Become a Pro</a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-700 rounded-md hover:bg-indigo-200" data-i18n="Nav3">Help Center</a>
+                <!-- Updated Phone Number Link -->
+                <a href="tel:+919845960784" class="block px-3 py-2 text-base font-medium text-indigo-700 rounded-md hover:bg-indigo-200 flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 fill-current" viewBox="0 0 24 24"><path d="M20 15.5l-2-2a1 1 0 00-.7-.3c-.2 0-.4 0-.5.1l-2 1.5c-.3.2-.6.2-.9.1-.8-.4-1.6-.9-2.4-1.7-.8-.8-1.3-1.6-1.7-2.4-.1-.3-.1-.6.1-.9l1.5-2c.1-.1.1-.3.1-.5 0-.2-.1-.4-.3-.7l-2-2a1 1 0 00-1.4 0l-1.5 1.5c-.4.4-.7.9-.9 1.4-.2.5-.2 1.1 0 1.6l2 4c.6 1.2 1.5 2.2 2.7 3.4 1.2 1.2 2.2 2.1 3.4 2.7l4 2c.5.2 1.1.2 1.6 0 .5-.2 1-.5 1.4-.9l1.5-1.5a1 1 0 000-1.4z"/></svg>
+                    <span data-i18n="ContactPhone">+91 98459-60784</span>
+                </a>
+                <a href="#" class="block px-3 py-2 text-base font-medium text-white bg-amber-500 rounded-md text-center hover:bg-amber-600" data-i18n="Login">Login / Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- Hero Section: The Booking Widget -->
+        <section class="hero-bg text-white pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Technical Headline -->
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-4 leading-tight" data-i18n="Headline">
+                        Precision Repair. <span class="text-amber-400">Certified Professionals.</span> Guaranteed Fix.
+                    </h1>
+                    <p class="text-lg sm:text-xl font-light mb-10 opacity-90" data-i18n="SubHeadline">
+                        Book India’s most reliable, background-verified technicians for all your appliance and home repairs.
+                    </p>
+
+                    <!-- Booking Widget (The Main Feature) -->
+                    <div class="bg-white p-4 sm:p-6 lg:p-8 rounded-xl shadow-2xl text-left transform -translate-y-4">
+                        <h2 class="text-xl font-bold text-indigo-800 mb-4" data-i18n="WidgetTitle">Book Your Expert Technician:</h2>
+                        <form id="booking-form" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            
+                            <!-- Dropdown 1: Service Category -->
+                            <div>
+                                <label for="category" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="CatLabel">Service Category</label>
+                                <select id="category" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-lg shadow-sm" onchange="updateIssues()">
+                                    <option value="" disabled selected data-i18n="CatPlaceholder">-- Select Repair Category --</option>
+                                    <!-- Options populated by JS and translated by JS -->
+                                </select>
+                            </div>
+
+                            <!-- Dropdown 2: Specific Issue -->
+                            <div>
+                                <label for="issue" class="block text-sm font-medium text-gray-700 mb-1" data-i18n="IssueLabel">Specific Issue</label>
+                                <select id="issue" class="mt-1 block w-full pl-3 pr-10 py-3 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-lg shadow-sm" disabled>
+                                    <option value="" disabled selected data-i18n="IssuePlaceholder">-- Select a Category First --</option>
+                                </select>
+                            </div>
+
+                            <!-- Button: Check Availability -->
+                            <div class="md:col-span-1 flex items-end">
+                                <button type="submit" class="w-full bg-amber-500 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-amber-600 transition transform duration-200 ease-in-out hover:scale-[1.02] mt-4 md:mt-0" disabled id="check-btn" data-i18n="BookBtn">
+                                    Check Price & Book
+                                </button>
+                            </div>
+                        </form>
+                        <p id="message-box" class="text-sm text-center mt-4 text-gray-600 hidden">
+                            <!-- JS message goes here -->
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="bg-indigo-100 py-6">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-center">
+                    
+                    <!-- Trust Feature 1: Warranty -->
+                    <div class="flex items-center justify-center p-2">
+                        <span class="trust-icon text-3xl mr-3">🛠️</span>
+                        <div>
+                            <p class="font-bold text-indigo-800" data-i18n="Trust1Head">90-Day Repair Warranty</p>
+                            <p class="text-sm text-gray-600" data-i18n="Trust1Sub">Secure guarantee on labour & parts.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Feature 2: Verified Pros -->
+                    <div class="flex items-center justify-center p-2">
+                        <span class="trust-icon text-3xl mr-3">✅</span>
+                        <div>
+                            <p class="font-bold text-indigo-800" data-i18n="Trust2Head">Certified Master Pros</p>
+                            <p class="text-sm text-gray-600" data-i18n="Trust2Sub">ITI certified & background verified.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Feature 3: Pricing -->
+                    <div class="flex items-center justify-center p-2">
+                        <span class="trust-icon text-3xl mr-3">💰</span>
+                        <div>
+                            <p class="font-bold text-indigo-800" data-i18n="Trust3Head">Upfront Diagnostics Fee</p>
+                            <p class="text-sm text-gray-600" data-i18n="Trust3Sub">See fixed fee before any inspection.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Categories -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-indigo-800 mb-10" data-i18n="CategoriesTitle">Our Core Technical Expertise</h2>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
+                    
+                    <!-- Card 1: Mobile Repair -->
+                    <a href="#" class="block p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <span class="text-5xl block mb-2">📱</span>
+                        <h3 class="text-lg font-semibold text-indigo-800" data-i18n="C1Head">Mobile Repair</h3>
+                        <p class="text-sm text-gray-500" data-i18n="C1Sub">Screen, Battery, Chip Level Fix.</p>
+                    </a>
+
+                    <!-- Card 2: Laptop Services -->
+                    <a href="#" class="block p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <span class="text-5xl block mb-2">💻</span>
+                        <h3 class="text-lg font-semibold text-indigo-800" data-i18n="C2Head">Laptop Services</h3>
+                        <p class="text-sm text-gray-500" data-i18n="C2Sub">Screen, OS Installation, Hinge Fix.</p>
+                    </a>
+
+                    <!-- Card 3: Washing Machine -->
+                    <a href="#" class="block p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <span class="text-5xl block mb-2">🧺</span>
+                        <h3 class="text-lg font-semibold text-indigo-800" data-i18n="C3Head">Washing Machine</h3>
+                        <p class="text-sm text-gray-500" data-i18n="C3Sub">Drum, Motor, PCB Repair.</p>
+                    </a>
+
+                    <!-- Card 4: Electrical -->
+                    <a href="#" class="block p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <span class="text-5xl block mb-2">⚡</span>
+                        <h3 class="text-lg font-semibold text-indigo-800" data-i18n="C4Head">Electrical Faults</h3>
+                        <p class="text-sm text-gray-500" data-i18n="C4Sub">Wiring, Short Circuit Diagnosis.</p>
+                    </a>
+
+                    <!-- Card 5: Plumbing -->
+                    <a href="#" class="block p-4 sm:p-6 bg-gray-50 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1 hidden lg:block">
+                        <span class="text-5xl block mb-2">💧</span>
+                        <h3 class="text-lg font-semibold text-indigo-800" data-i18n="C5Head">Advanced Plumbing</h3>
+                        <p class="text-sm text-gray-500" data-i18n="C5Sub">Leak Detection, Motor Issues.</p>
+                    </a>
+
+                </div>
+                <button class="mt-10 px-8 py-3 bg-indigo-700 text-white font-semibold rounded-lg shadow-lg hover:bg-indigo-800 transition transform hover:scale-105" data-i18n="ViewAll">
+                    View All 20+ Repair Services
+                </button>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-indigo-800 mb-12" data-i18n="HowItWorks">How FixitCare Works: The 3-Step Process</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-amber-500">
+                        <div class="text-3xl font-extrabold text-amber-500 mb-2">1. DIAGNOSE</div>
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-3" data-i18n="S1Head">Select & Book Expert</h3>
+                        <p class="text-gray-600" data-i18n="S1Text">Choose your appliance/issue. Confirm the upfront minimal inspection fee and book a time slot that suits you.</p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-amber-500">
+                        <div class="text-3xl font-extrabold text-amber-500 mb-2">2. QUOTE</div>
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-3" data-i18n="S2Head">Get Digital Quotation</h3>
+                        <p class="text-gray-600" data-i18n="S2Text">The Pro diagnoses the fault and gives you a digital quote detailing parts, labour, and warranty terms for your approval.</p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg border-t-4 border-amber-500">
+                        <div class="text-3xl font-extrabold text-amber-500 mb-2">3. GUARANTEE</div>
+                        <h3 class="text-xl font-semibold text-indigo-800 mb-3" data-i18n="S3Head">Professional Repair & Warranty</h3>
+                        <p class="text-gray-600" data-i18n="S3Text">After approval, the Pro completes the job. You receive a digital invoice and a 90-day FixitCare warranty.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Become a Pro Section -->
+        <section class="py-16 bg-indigo-700 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold mb-4" data-i18n="ProHead">Are you a Master Technician?</h2>
+                <p class="text-lg font-light mb-8" data-i18n="ProSub">Join the FixitCare network of certified professionals and grow your earnings.</p>
+                <button class="px-8 py-3 bg-amber-500 text-indigo-900 font-bold rounded-lg shadow-xl hover:bg-amber-400 transition transform hover:scale-105" data-i18n="ProBtn">
+                    Become a FixitCare Pro Today
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Updated Name) -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
+                
+                <!-- Col 1: Logo & Social -->
+                <div>
+                    <h4 class="text-xl font-black text-amber-500 mb-4">FixitCare 24/7 Service</h4>
+                    <p class="text-sm text-gray-400 mb-4" data-i18n="FooterText">Precision Repair, Every Time.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">FB</a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">IG</a>
+                        <a href="#" class="text-gray-400 hover:text-amber-500 transition">YT</a>
+                    </div>
+                </div>
+                
+                <!-- Col 2: Contact Details -->
+                <div class="md:col-span-1">
+                    <h5 class="font-semibold mb-4 text-indigo-300" data-i18n="ContactUs">Contact Us</h5>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li>
+                            <p class="text-gray-500 text-xs uppercase mb-1" data-i18n="CallUs">Call Us</p>
+                            <!-- Phone Number Link -->
+                            <a href="tel:+919845960784" class="hover:text-amber-500 footer-link font-medium" data-i18n="ContactPhone">+91 98459-60784</a>
+                        </li>
+                        <li>
+                            <p class="text-gray-500 text-xs uppercase mb-1" data-i18n="EmailUs">Email Us</p>
+                            <a href="mailto:support@fixitcare247service.com" class="hover:text-amber-500 footer-link font-medium" data-i18n="ContactEmail">support@fixitcare247service.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Company -->
+                <div>
+                    <h5 class="font-semibold mb-4 text-indigo-300">Company</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-amber-500">About Us</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Careers</a></li>
+                        <li><a href="#" class="hover:text-amber-500">FixitCare Blog</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Press & Media</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Support -->
+                <div>
+                    <h5 class="font-semibold mb-4 text-indigo-300">Support</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-amber-500">Help Center</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Warranty Policy</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Cancellation/Refund</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Legal -->
+                <div>
+                    <h5 class="font-semibold mb-4 text-indigo-300">Legal</h5>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-amber-500">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-amber-500">Pro Partner Agreement</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+                &copy; 2025 FixitCare247Service.com. <span data-i18n="FooterCopy">All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Interactive Elements and Localization -->
+    <script>
+        const translations = {
+            en: {
+                Title: "FixitCare247Service.com | Professional Repair Services", Nav1: "Repair Services", Nav2: "Become a Pro", Nav3: "Help Center", Login: "Login / Sign Up", City: "Service City:", Change: "Change", Headline: 'Precision Repair. <span class="text-amber-400">Certified Professionals.</span> Guaranteed Fix.', SubHeadline: "Book India’s most reliable, background-verified technicians for all your appliance and home repairs.", WidgetTitle: "Book Your Expert Technician:", CatLabel: "Service Category", CatPlaceholder: "-- Select Repair Category --", IssueLabel: "Specific Issue", IssuePlaceholder: "-- Select a Category First --", BookBtn: "Check Price & Book", Trust1Head: "90-Day Repair Warranty", Trust1Sub: "Secure guarantee on labour & parts.", Trust2Head: "Certified Master Pros", Trust2Sub: "ITI certified & background verified.", Trust3Head: "Upfront Diagnostics Fee", Trust3Sub: "See fixed fee before any inspection.", CategoriesTitle: "Our Core Technical Expertise", C1Head: "Mobile Repair", C1Sub: "Screen, Battery, Chip Level Fix.", C2Head: "Laptop Services", C2Sub: "Screen, OS Installation, Hinge Fix.", C3Head: "Washing Machine", C3Sub: "Drum, Motor, PCB Repair.", C4Head: "Electrical Faults", C4Sub: "Wiring, Short Circuit Diagnosis.", C5Head: "Advanced Plumbing", C5Sub: "Leak Detection, Motor Issues.", ViewAll: "View All 20+ Repair Services", HowItWorks: "How FixitCare Works: The 3-Step Process", S1Head: "Select & Book Expert", S1Text: "Choose your appliance/issue. Confirm the upfront minimal inspection fee and book a time slot that suits you.", S2Head: "Get Digital Quotation", S2Text: "The Pro diagnoses the fault and gives you a digital quote detailing parts, labour, and warranty terms for your approval.", S3Head: "Professional Repair & Warranty", S3Text: "After approval, the Pro completes the job. You receive a digital invoice and a 90-day FixitCare warranty.", ProHead: "Are you a Master Technician?", ProSub: "Join the FixitCare network of certified professionals and grow your earnings.", ProBtn: "Become a FixitCare Pro Today", FooterText: "Precision Repair, Every Time. (FixitCare 24/7 Service)", FooterCopy: "All rights reserved.",
+                
+                // Contact Details - UPDATED EMAIL
+                ContactUs: "Contact Us", CallUs: "Call Us", EmailUs: "Email Us", ContactPhone: "+91 98459-60784", ContactEmail: "support@fixitcare247service.com",
+
+                // Dynamic Options
+                mobile: "Mobile Repair", mobile_1: "Broken Screen Replacement (All Models)", mobile_2: "Battery Replacement", mobile_3: "Charging Port Repair/Replacement", mobile_4: "Water Damage/Circuit Diagnosis", mobile_5: "Software/OS Issues",
+                laptop: "Laptop Services", laptop_1: "Screen/Display Replacement", laptop_2: "OS Installation & Software Fix", laptop_3: "Hinge/Body Repair", laptop_4: "Keyboard/Trackpad Replacement", laptop_5: "Motherboard Level Repair",
+                appliance: "Appliance Repair", appliance_1: "Washing Machine Motor Repair", appliance_2: "Refrigerator Cooling Issue", appliance_3: "Geyser Leak/Heating Element", appliance_4: "Microwave/Oven Repair",
+                electrical: "Electrical Works", electrical_1: "Short Circuit Diagnosis", electrical_2: "MCB Tripping/Fuse Replacement", electrical_3: "New Wiring/Socket Installation", electrical_4: "Inverter/Stabilizer Repair",
+                plumbing: "Plumbing & Handyman", plumbing_1: "Major Leak & Pipe Repair", plumbing_2: "Drain Blockage Removal (CCTV)", plumbing_3: "New Faucet/Fixture Installation", plumbing_4: "Water Motor/Pump Repair",
+            },
+            hi: {
+                Title: "FixitCare247Service.com | पेशेवर मरम्मत सेवाएँ", Nav1: "मरम्मत सेवाएँ", Nav2: "प्रो बनें", Nav3: "सहायता केंद्र", Login: "लॉगिन / साइन अप करें", City: "सेवा शहर:", Change: "बदलें", Headline: 'सटीक मरम्मत. <span class="text-amber-400">प्रमाणित विशेषज्ञ.</span> गारंटीड फ़िक्स.', SubHeadline: "अपने सभी उपकरण और घरेलू मरम्मत के लिए भारत के सबसे विश्वसनीय, पृष्ठभूमि-सत्यापित तकनीशियनों को बुक करें।", WidgetTitle: "अपने विशेषज्ञ तकनीशियन को बुक करें:", CatLabel: "सेवा श्रेणी", CatPlaceholder: "-- मरम्मत श्रेणी चुनें --", IssueLabel: "विशिष्ट समस्या", IssuePlaceholder: "-- पहले एक श्रेणी चुनें --", BookBtn: "कीमत और बुकिंग देखें", Trust1Head: "90 दिन की मरम्मत वारंटी", Trust1Sub: "श्रम और पुर्जों पर सुरक्षित गारंटी।", Trust2Head: "प्रमाणित मास्टर प्रो", Trust2Sub: "आईटीआई प्रमाणित और पृष्ठभूमि सत्यापित।", Trust3Head: "अग्रिम निदान शुल्क", Trust3Sub: "किसी भी निरीक्षण से पहले निश्चित शुल्क देखें।", CategoriesTitle: "हमारी मुख्य तकनीकी विशेषज्ञता", C1Head: "मोबाइल मरम्मत", C1Sub: "स्क्रीन, बैटरी, चिप स्तर फ़िक्स।", C2Head: "लैपटॉप सेवाएँ", C2Sub: "स्क्रीन, ओएस इंस्टॉलेशन, हिंज फ़िक्स।", C3Head: "वॉशिंग मशीन", C3Sub: "ड्रम, मोटर, पीसीबी मरम्मत।", C4Head: "बिजली के दोष", C4Sub: "वायरिंग, शॉर्ट सर्किट निदान।", C5Head: "उन्नत प्लंबिंग", C5Sub: "रिसाव का पता लगाना, मोटर समस्याएँ।", ViewAll: "सभी 20+ मरम्मत सेवाएँ देखें", HowItWorks: "फिक्सिटकेयर कैसे काम करता है: 3-चरणीय प्रक्रिया", S1Head: "विशेषज्ञ का चयन और बुकिंग करें", S1Text: "अपना उपकरण/समस्या चुनें। अग्रिम न्यूनतम निरीक्षण शुल्क की पुष्टि करें और अपने लिए उपयुक्त समय स्लॉट बुक करें।", S2Head: "डिजिटल कोटेशन प्राप्त करें", S2Text: "प्रो गलती का निदान करता है और आपकी स्वीकृति के लिए पुर्जों, श्रम और वारंटी शर्तों का विवरण देते हुए एक डिजिटल कोटेशन देता है।", S3Head: "पेशेवर मरम्मत और वारंटी", S3Text: "अनुमोदन के बाद, प्रो काम पूरा करता है। आपको एक डिजिटल चालान और 90 दिन की फिक्सिटकेयर वारंटी मिलती है।", ProHead: "क्या आप एक मास्टर तकनीशियन हैं?", ProSub: "प्रमाणित पेशेवरों के फिक्सिटकेयर नेटवर्क से जुड़ें और अपनी आय बढ़ाएँ।", ProBtn: "आज ही फिक्सिटकेयर प्रो बनें", FooterText: "हर बार सटीक मरम्मत। (FixitCare 24/7 Service)", FooterCopy: "सभी अधिकार सुरक्षित।",
+
+                // Contact Details - UPDATED EMAIL
+                ContactUs: "हमसे संपर्क करें", CallUs: "हमें कॉल करें", EmailUs: "हमें ईमेल करें", ContactPhone: "+91 98459-60784", ContactEmail: "support@fixitcare247service.com",
+
+                // Dynamic Options
+                mobile: "मोबाइल मरम्मत", mobile_1: "टूटी स्क्रीन बदलना (सभी मॉडल)", mobile_2: "बैटरी बदलना", mobile_3: "चार्जिंग पोर्ट मरम्मत/बदली", mobile_4: "जल क्षति/सर्किट निदान", mobile_5: "सॉफ्टवेयर/ओएस समस्याएँ",
+                laptop: "लैपटॉप सेवाएँ", laptop_1: "स्क्रीन/डिस्प्ले बदलना", laptop_2: "ओएस इंस्टॉलेशन और सॉफ्टवेयर फ़िक्स", laptop_3: "हिंज/बॉडी मरम्मत", laptop_4: "कीबोर्ड/ट्रैकपैड बदलना", laptop_5: "मदरबोर्ड स्तर की मरम्मत",
+                appliance: "उपकरण मरम्मत", appliance_1: "वॉशिंग मशीन मोटर मरम्मत", appliance_2: "रेफ्रिजरेटर कूलिंग समस्या", appliance_3: "गीजर रिसाव/हीटिंग तत्व", appliance_4: "माइक्रोवेव/ओवन मरम्मत",
+                electrical: "बिजली के कार्य", electrical_1: "शॉर्ट सर्किट निदान", electrical_2: "एमसीबी ट्रिपिंग/फ़्यूज़ बदलना", electrical_3: "नई वायरिंग/सॉकेट स्थापना", electrical_4: "इन्वर्टर/स्टेबलाइजर मरम्मत",
+                plumbing: "प्लंबिंग और अप्रेंटिस", plumbing_1: "बड़ी रिसाव और पाइप मरम्मत", plumbing_2: "नाली जाम हटाना (सीसीटीवी)", plumbing_3: "नया नल/फिक्स्चर स्थापना", plumbing_4: "जल मोटर/पंप मरम्मत",
+            },
+            kn: {
+                Title: "FixitCare247Service.com | ವೃತ್ತಿಪರ ದುರಸ್ತಿ ಸೇವೆಗಳು", Nav1: "ದುರಸ್ತಿ ಸೇವೆಗಳು", Nav2: "ಪ್ರೊ ಆಗಿ", Nav3: "ಸಹಾಯ ಕೇಂದ್ರ", Login: "ಲಾಗಿನ್ / ಸೈನ್ ಅಪ್", City: "ಸೇವಾ ನಗರ:", Change: "ಬದಲಾಯಿಸಿ", Headline: 'ನಿಖರ ದುರಸ್ತಿ. <span class="text-amber-400">ಪ್ರಮಾಣೀಕೃತ ವೃತ್ತಿಪರರು.</span> ಖಚಿತವಾದ ಪರಿಹಾರ.', SubHeadline: "ನಿಮ್ಮ ಎಲ್ಲಾ ಉಪಕರಣ ಮತ್ತು ಮನೆಯ ದುರಸ್ತಿಗಾಗಿ ಭಾರತದ ಅತ್ಯಂತ ವಿಶ್ವಾಸಾರ್ಹ, ಹಿನ್ನೆಲೆ-ಪರಿಶೀಲಿಸಿದ ತಂತ್ರಜ್ಞರನ್ನು ಬುಕ್ ಮಾಡಿ.", WidgetTitle: "ನಿಮ್ಮ ತಜ್ಞ ತಂತ್ರಜ್ಞರನ್ನು ಬುಕ್ ಮಾಡಿ:", CatLabel: "ಸೇವಾ ವರ್ಗ", CatPlaceholder: "-- ದುರಸ್ತಿ ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ --", IssueLabel: "ನಿರ್ದಿಷ್ಟ ಸಮಸ್ಯೆ", IssuePlaceholder: "-- ಮೊದಲು ಒಂದು ವರ್ಗವನ್ನು ಆಯ್ಕೆಮಾಡಿ --", BookBtn: "ಬೆಲೆ ಮತ್ತು ಬುಕಿಂಗ್ ಪರಿಶೀಲಿಸಿ", Trust1Head: "90 ದಿನಗಳ ದುರಸ್ತಿ ವಾರಂಟಿ", Trust1Sub: "ಶ್ರಮ ಮತ್ತು ಭಾಗಗಳ ಮೇಲೆ ಸುರಕ್ಷಿತ ಗ್ಯಾರಂಟಿ.", Trust2Head: "ಪ್ರಮಾಣೀಕೃತ ಮಾಸ್ಟರ್ ಪ್ರೊ", Trust2Sub: "ಐಟಿಐ ಪ್ರಮಾಣೀಕೃತ ಮತ್ತು ಹಿನ್ನೆಲೆ ಪರಿಶೀಲಿಸಲಾಗಿದೆ.", Trust3Head: "ಮುಂಗಡ ರೋಗನಿರ್ಣಯ ಶುಲ್ಕ", Trust3Sub: "ಯಾವುದೇ ತಪಾಸಣೆಯ ಮೊದಲು ನಿಗದಿತ ಶುಲ್ಕವನ್ನು ನೋಡಿ.", CategoriesTitle: "ನಮ್ಮ ಪ್ರಮುಖ ತಾಂತ್ರಿಕ ಪರಿಣತಿ", C1Head: "ಮೊಬೈಲ್ ದುರಸ್ತಿ", C1Sub: "ಸ್ಕ್ರೀನ್, ಬ್ಯಾಟರಿ, ಚಿಪ್ ಮಟ್ಟದ ಪರಿಹಾರ.", C2Head: "ಲ್ಯಾಪ್‌ಟಾಪ್ ಸೇವೆಗಳು", C2Sub: "ಸ್ಕ್ರೀನ್, ಓಎಸ್ ಸ್ಥಾಪನೆ, ಹಿಂಜ್ ಪರಿಹಾರ.", C3Head: "ವಾಷಿಂಗ್ ಮೆಷಿನ್", C3Sub: "ಡ್ರಮ್, ಮೋಟರ್, ಪಿಸಿಬಿ ದುರಸ್ತಿ.", C4Head: "ವಿದ್ಯುತ್ ದೋಷಗಳು", C4Sub: "ವೈರಿಂಗ್, ಶಾರ್ಟ್ ಸರ್ಕ್ಯೂಟ್ ರೋಗನಿರ್ಣಯ.", C5Head: "ಸುಧಾರಿತ ಪ್ಲಂಬಿಂಗ್", C5Sub: "ಸೋರಿಕೆ ಪತ್ತೆ, ಮೋಟರ್ ಸಮಸ್ಯೆಗಳು.", ViewAll: "ಎಲ್ಲಾ 20+ ದುರಸ್ತಿ ಸೇವೆಗಳನ್ನು ವೀಕ್ಷಿಸಿ", HowItWorks: "ಫಿಕ್ಸಿಟ್‌ಕೇರ್ ಹೇಗೆ ಕೆಲಸ ಮಾಡುತ್ತದೆ: 3-ಹಂತದ ಪ್ರಕ್ರಿಯೆ", S1Head: "ತಜ್ಞರನ್ನು ಆಯ್ಕೆಮಾಡಿ ಮತ್ತು ಬುಕ್ ಮಾಡಿ", S1Text: "ನಿಮ್ಮ ಉಪಕರಣ/ಸಮಸ್ಯೆಯನ್ನು ಆರಿಸಿ. ಮುಂಗಡ ಕನಿಷ್ಠ ತಪಾಸಣೆ ಶುಲ್ಕವನ್ನು ಖಚಿತಪಡಿಸಿ ಮತ್ತು ನಿಮಗೆ ಸೂಕ್ತವಾದ ಸಮಯವನ್ನು ಬುಕ್ ಮಾಡಿ.", S2Head: "ಡಿಜಿಟಲ್ ಕೋಟೇಶನ್ ಪಡೆಯಿರಿ", S2Text: "ಪ್ರೊ ದೋಷವನ್ನು ಗುರುತಿಸುತ್ತಾರೆ ಮತ್ತು ನಿಮ್ಮ ಅನುಮೋದನೆಗಾಗಿ ಭಾಗಗಳು, ಶ್ರಮ ಮತ್ತು ವಾರಂಟಿ ನಿಯಮಗಳನ್ನು ವಿವರಿಸುವ ಡಿಜಿಟಲ್ ಕೋಟೇಶನ್ ನೀಡುತ್ತಾರೆ.", S3Head: "ವೃತ್ತಿಪರ ದುರಸ್ತಿ ಮತ್ತು ವಾರಂಟಿ", S3Text: "ಅನುಮೋದನೆಯ ನಂತರ, ಪ್ರೊ ಕೆಲಸವನ್ನು ಪೂರ್ಣಗೊಳಿಸುತ್ತಾರೆ. ನೀವು ಡಿಜಿಟಲ್ ಇನ್‌ವಾಯ್ಸ್ ಮತ್ತು 90 ದಿನಗಳ ಫಿಕ್ಸಿಟ್‌ಕೇರ್ ವಾರಂಟಿ ಪಡೆಯುತ್ತೀರಿ.", ProHead: "ನೀವು ಮಾಸ್ಟರ್ ತಂತ್ರಜ್ಞರೇ?", ProSub: "ಪ್ರಮಾಣೀಕೃತ ವೃತ್ತಿಪರರ ಫಿಕ್ಸಿಟ್‌ಕೇರ್ ನೆಟ್‌ವರ್ಕ್‌ಗೆ ಸೇರಿಕೊಳ್ಳಿ ಮತ್ತು ನಿಮ್ಮ ಗಳಿಕೆಯನ್ನು ಹೆಚ್ಚಿಸಿಕೊಳ್ಳಿ.", ProBtn: "ಇಂದು ಫಿಕ್ಸಿಟ್‌ಕೇರ್ ಪ್ರೊ ಆಗಿ", FooterText: "ಪ್ರತಿ ಬಾರಿ ನಿಖರ ದುರಸ್ತಿ. (FixitCare 24/7 Service)", FooterCopy: "ಎಲ್ಲಾ ಹಕ್ಕುಗಳನ್ನು ಕಾಯ್ದಿರಿಸಲಾಗಿದೆ.",
+                
+                // Contact Details - UPDATED EMAIL
+                ContactUs: "ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ", CallUs: "ನಮಗೆ ಕರೆ ಮಾಡಿ", EmailUs: "ನಮಗೆ ಇಮೇಲ್ ಮಾಡಿ", ContactPhone: "+91 98459-60784", ContactEmail: "support@fixitcare247service.com",
+
+                // Dynamic Options
+                mobile: "ಮೊಬೈಲ್ ದುರಸ್ತಿ", mobile_1: "ಮುರಿದ ಪರದೆ ಬದಲಿ (ಎಲ್ಲಾ ಮಾದರಿಗಳು)", mobile_2: "ಬ್ಯಾಟರಿ ಬದಲಿ", mobile_3: "ಚಾರ್ಜಿಂಗ್ ಪೋರ್ಟ್ ದುರಸ್ತಿ/ಬದಲಿ", mobile_4: "ನೀರಿನ ಹಾನಿ/ಸರ್ಕ್ಯೂಟ್ ರೋಗನಿರ್ಣಯ", mobile_5: "ಸಾಫ್ಟ್‌ವೇರ್/ಓಎಸ್ ಸಮಸ್ಯೆಗಳು",
+                laptop: "ಲ್ಯಾಪ್‌ಟಾಪ್ ಸೇವೆಗಳು", laptop_1: "ಸ್ಕ್ರೀನ್/ಡಿಸ್ಪ್ಲೇ ಬದಲಿ", laptop_2: "ಓಎಸ್ ಸ್ಥಾಪನೆ ಮತ್ತು ಸಾಫ್ಟ್‌ವೇರ್ ಪರಿಹಾರ", laptop_3: "ಹಿಂಜ್/ದೇಹ ದುರಸ್ತಿ", laptop_4: "ಕೀಬೋರ್ಡ್/ಟ್ರ್ಯಾಕ್‌ಪ್ಯಾಡ್ ಬದಲಿ", laptop_5: "ಮದರ್‌ಬೋರ್ಡ್ ಮಟ್ಟದ ದುರಸ್ತಿ",
+                appliance: "ಉಪಕರಣ ದುರಸ್ತಿ", appliance_1: "ವಾಷಿಂಗ್ ಮೆಷಿನ್ ಮೋಟರ್ ದುರಸ್ತಿ", appliance_2: "ರೆಫ್ರಿಜರೇಟರ್ ಕೂಲಿಂಗ್ ಸಮಸ್ಯೆ", appliance_3: "ಗೀಸರ್ ಸೋರಿಕೆ/ತಾಪಕ ಅಂಶ", appliance_4: "ಮೈಕ್ರೋವೇವ್/ಓವನ್ ದುರಸ್ತಿ",
+                electrical: "ವಿದ್ಯುತ್ ಕೆಲಸಗಳು", electrical_1: "ಶಾರ್ಟ್ ಸರ್ಕ್ಯೂಟ್ ರೋಗನಿರ್ಣಯ", electrical_2: "ಎಂಸಿಬಿ ಟ್ರಿಪ್ಪಿಂಗ್/ಫ್ಯೂಸ್ ಬದಲಿ", electrical_3: "ಹೊಸ ವೈರಿಂಗ್/ಸಾಕೆಟ್ ಸ್ಥಾಪನೆ", electrical_4: "ಇನ್ವರ್ಟರ್/ಸ್ಟೆಬಿಲೈಜರ್ ದುರಸ್ತಿ",
+                plumbing: "ಪ್ಲಂಬಿಂಗ್ ಮತ್ತು ಹ್ಯಾಂಡಿಮ್ಯಾನ್", plumbing_1: "ಪ್ರಮುಖ ಸೋರಿಕೆ ಮತ್ತು ಪೈಪ್ ದುರಸ್ತಿ", plumbing_2: "ಚರಂಡಿ ತಡೆಗಟ್ಟುವಿಕೆ ತೆಗೆಯುವಿಕೆ (ಸಿಸಿಟಿವಿ)", plumbing_3: "ಹೊಸ ನಳ/ಫಿಕ್ಸ್ಚರ್ ಸ್ಥಾಪನೆ", plumbing_4: "ವಾಟರ್ ಮೋಟರ್/ಪಂಪ್ ದುರಸ್ತಿ",
+            },
+            ta: {
+                Title: "FixitCare247Service.com | தொழில்முறை பழுதுபார்க்கும் சேவைகள்", Nav1: "பழுதுபார்க்கும் சேவைகள்", Nav2: "ஒரு நிபுணராகவும்", Nav3: "உதவி மையம்", Login: "உள்நுழை/பதிவு", City: "சேவை நகரம்:", Change: "மாற்றவும்", Headline: 'துல்லியமான பழுது. <span class="text-amber-400">சான்றளிக்கப்பட்ட வல்லுநர்கள்.</span> உத்தரவாதமான தீர்வு.', SubHeadline: "உங்கள் அனைத்து சாதனம் மற்றும் வீட்டுப் பழுதுபார்ப்புகளுக்கு இந்தியாவின் மிகவும் நம்பகமான, பின்னணி சரிபார்க்கப்பட்ட தொழில்நுட்ப வல்லுநர்களைப் பதிவு செய்யவும்.", WidgetTitle: "உங்கள் நிபுணத்துவ தொழில்நுட்ப வல்லுநரை பதிவு செய்யுங்கள்:", CatLabel: "சேவைப் பிரிவு", CatPlaceholder: "-- பழுதுபார்க்கும் பிரிவைத் தேர்ந்தெடுக்கவும் --", IssueLabel: "குறிப்பிட்ட சிக்கல்", IssuePlaceholder: "-- முதலில் ஒரு பிரிவைத் தேர்ந்தெடுக்கவும் --", BookBtn: "விலை மற்றும் புக்கிங்கை சரிபார்க்கவும்", Trust1Head: "90 நாள் பழுதுபார்ப்பு உத்தரவாதம்", Trust1Sub: "உழைப்பு மற்றும் பாகங்களுக்கு பாதுகாப்பான உத்தரவாதம்.", Trust2Head: "சான்றளிக்கப்பட்ட மாஸ்டர் நிபுணர்கள்", Trust2Sub: "ஐடிஐ சான்றளிக்கப்பட்ட மற்றும் பின்னணி சரிபார்க்கப்பட்டது.", Trust3Head: "முன்கூட்டியே கண்டறியும் கட்டணம்", Trust3Sub: "எந்தவொரு ஆய்வுக்கும் முன் நிர்ணயிக்கப்பட்ட கட்டணத்தைப் பார்க்கவும்.", CategoriesTitle: "எங்கள் முக்கிய தொழில்நுட்ப நிபுணத்துவம்", C1Head: "மொபைல் பழுது", C1Sub: "திரை, பேட்டரி, சிப் நிலை சரிசெய்தல்.", C2Head: "லேப்டாப் சேவைகள்", C2Sub: "திரை, ஓஎஸ் நிறுவல், கீல் சரிசெய்தல்.", C3Head: "சலவை இயந்திரம்", C3Sub: "டிரம், மோட்டார், பிசிபி பழுது.", C4Head: "மின்சார கோளாறுகள்", C4Sub: "வயரிங், ஷார்ட் சர்க்யூட் கண்டறிதல்.", C5Head: "மேம்பட்ட பிளம்பிங்", C5Sub: "கசிவு கண்டறிதல், மோட்டார் சிக்கல்கள்.", ViewAll: "அனைத்து 20+ பழுதுபார்க்கும் சேவைகளையும் காண்க", HowItWorks: "ஃபிக்ஸிட்கேர் எவ்வாறு செயல்படுகிறது: 3-படி செயல்முறை", S1Head: "நிபுணரைத் தேர்ந்தெடுத்து பதிவு செய்யவும்", S1Text: "உங்கள் சாதனம்/சிக்கலைத் தேர்ந்தெடுக்கவும். முன்கூட்டியே குறைந்தபட்ச ஆய்வு கட்டணத்தை உறுதிசெய்து, உங்களுக்கு ஏற்ற நேரத்தை பதிவு செய்யவும்.", S2Head: "டிஜிட்டல் மேற்கோளைப் பெறுங்கள்", S2Text: "நிபுணர் தவறுகளைக் கண்டறிந்து, உங்கள் ஒப்புதலுக்காக பாகங்கள், உழைப்பு மற்றும் உத்தரவாத விவரங்களை உள்ளடக்கிய டிஜிட்டல் மேற்கோளை வழங்குகிறார்.", S3Head: "தொழில்முறை பழுது மற்றும் உத்தரவாதம்", S3Text: "ஒப்புதலுக்குப் பிறகு, நிபுணர் வேலையை முடிக்கிறார். நீங்கள் ஒரு டிஜிட்டல் இன்வாய்ஸ் மற்றும் 90 நாள் ஃபிக்ஸிட்கேர் உத்தரவாதத்தைப் பெறுவீர்கள்。", ProHead: "நீங்கள் ஒரு மாஸ்டர் தொழில்நுட்ப வல்லுநரா?", ProSub: "சான்றளிக்கப்பட்ட நிபுணர்களின் ஃபிக்ஸிட்கேர் நெட்வொர்க்கில் சேரி, உங்கள் வருவாயை வளர்த்துக் கொள்ளுங்கள்.", ProBtn: "இன்றே ஃபிக்ஸிட்கேர் நிபுணராகவும்", FooterText: "ஒவ்வொரு முறையும் துல்லியமான பழுது. (FixitCare 24/7 Service)", FooterCopy: "அனைத்து உரிமைகளும் பாதுகாக்கப்பட்டவை.",
+
+                // Contact Details - UPDATED EMAIL
+                ContactUs: "எங்களைத் தொடர்பு கொள்ளுங்கள்", CallUs: "எங்களை அழைக்கவும்", EmailUs: "எங்களுக்கு மின்னஞ்சல் செய்யவும்", ContactPhone: "+91 98459-60784", ContactEmail: "support@fixitcare247service.com",
+
+                // Dynamic Options
+                mobile: "மொபைல் பழுது", mobile_1: "உடைந்த திரை மாற்றுதல் (அனைத்து மாடல்கள்)", mobile_2: "பேட்டரி மாற்றுதல்", mobile_3: "சார்ஜிங் போர்ட் பழுது/மாற்றுதல்", mobile_4: "நீர் சேதம்/சுற்று கண்டறிதல்", mobile_5: "மென்பொருள்/ஓஎஸ் சிக்கல்கள்",
+                laptop: "லேப்டாப் சேவைகள்", laptop_1: "திரை/காட்சி மாற்றுதல்", laptop_2: "ஓஎஸ் நிறுவல் மற்றும் மென்பொருள் சரி", laptop_3: "கீல்/உடல் பழுது", laptop_4: "விசைப்பலகை/டிராக்பேட் மாற்றுதல்", laptop_5: "மதர்போர்டு நிலை பழுது",
+                appliance: "சாதன பழுது", appliance_1: "சலவை இயந்திர மோட்டார் பழுது", appliance_2: "குளிர்சாதனப் பெட்டி குளிரூட்டும் சிக்கல்", appliance_3: "கீசர் கசிவு/வெப்பமூட்டும் உறுப்பு", appliance_4: "மைக்ரோவேவ்/அடுப்பு பழுது",
+                electrical: "மின் வேலைகள்", electrical_1: "ஷார்ட் சர்க்யூட் கண்டறிதல்", electrical_2: "எம்சிபி ட்ரிப்பிங்/ஃபியூஸ் மாற்றுதல்", electrical_3: "புதிய வயரிங்/சாக்கெட் நிறுவல்", electrical_4: "இன்வெர்ட்டர்/ஸ்டெபிலைசர் பழுது",
+                plumbing: "பிளம்பிங் மற்றும் கைவினைஞர்", plumbing_1: "பெரிய கசிவு மற்றும் குழாய் பழுது", plumbing_2: "வடிகால் அடைப்பு நீக்கம் (சிசிடிவி)", plumbing_3: "புதிய குழாய்/பொருத்துதல் நிறுவல்", plumbing_4: "நீர் மோட்டார்/பம்ப் பழுது",
+            },
+        };
+
+        let currentLang = 'hi'; // Default to Hindi as the user requested in Hindi
+
+        const issuesData = {
+            mobile: ['mobile_1', 'mobile_2', 'mobile_3', 'mobile_4', 'mobile_5'],
+            laptop: ['laptop_1', 'laptop_2', 'laptop_3', 'laptop_4', 'laptop_5'],
+            appliance: ['appliance_1', 'appliance_2', 'appliance_3', 'appliance_4'],
+            electrical: ['electrical_1', 'electrical_2', 'electrical_3', 'electrical_4'],
+            plumbing: ['plumbing_1', 'plumbing_2', 'plumbing_3', 'plumbing_4'],
+        };
+
+        const categorySelect = document.getElementById('category');
+        const issueSelect = document.getElementById('issue');
+        const checkButton = document.getElementById('check-btn');
+        const messageBox = document.getElementById('message-box');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const bookingForm = document.getElementById('booking-form');
+        const langSelectorDesktop = document.getElementById('language-selector');
+        const langSelectorMobile = document.getElementById('mobile-language-selector');
+
+        // Function to translate the entire page
+        function translatePage(lang) {
+            currentLang = lang;
+            const langData = translations[lang];
+
+            // 1. Translate all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (langData[key]) {
+                    // Use innerHTML for headline to preserve amber span
+                    if (key === 'Headline') {
+                         element.innerHTML = langData[key];
+                    } else if (key === 'Title') {
+                        document.title = langData[key];
+                    } else if (element.tagName === 'BUTTON') {
+                        element.textContent = langData[key];
+                    } 
+                    else if (key === 'ContactPhone' || key === 'ContactEmail') {
+                        // Update the displayed text for phone/email
+                        element.textContent = langData[key];
+                    }
+                    else {
+                        element.textContent = langData[key];
+                    }
+                }
+            });
+
+            // 2. Repopulate Category Dropdown with translated options
+            populateCategoryDropdown();
+            
+            // 3. Update Issue dropdown if a category was already selected
+            updateIssues(true);
+        }
+
+        // Function to populate category dropdown
+        function populateCategoryDropdown() {
+            const currentCatValue = categorySelect.value;
+            categorySelect.innerHTML = '';
+            
+            // Add placeholder
+            const placeholderOption = document.createElement('option');
+            placeholderOption.value = "";
+            placeholderOption.disabled = true;
+            placeholderOption.selected = true;
+            placeholderOption.textContent = translations[currentLang]['CatPlaceholder'];
+            categorySelect.appendChild(placeholderOption);
+
+            // Add translated categories
+            Object.keys(issuesData).forEach(key => {
+                const option = document.createElement('option');
+                option.value = key;
+                // Use the key itself to fetch the translated name
+                option.textContent = translations[currentLang][key];
+                if (key === currentCatValue) {
+                    option.selected = true;
+                }
+                categorySelect.appendChild(option);
+            });
+        }
+
+
+        // Function to update the issues dropdown based on category selection
+        function updateIssues(isTranslationUpdate = false) {
+            const selectedCategoryKey = categorySelect.value;
+            const currentIssueValue = isTranslationUpdate ? '' : issueSelect.value;
+            
+            // Clear previous options
+            issueSelect.innerHTML = '';
+            
+            // Add placeholder
+            const placeholderOption = document.createElement('option');
+            placeholderOption.value = "";
+            placeholderOption.disabled = true;
+            placeholderOption.selected = true;
+            placeholderOption.textContent = translations[currentLang]['IssuePlaceholder'];
+            issueSelect.appendChild(placeholderOption);
+
+
+            if (selectedCategoryKey) {
+                // Enable issue select
+                issueSelect.disabled = false;
+                checkButton.disabled = true; 
+                messageBox.classList.add('hidden');
+
+                // Populate with new, translated options
+                if (issuesData[selectedCategoryKey]) {
+                    issuesData[selectedCategoryKey].forEach(issueKey => {
+                        const option = document.createElement('option');
+                        // Store the English key in the value, but display the translated text
+                        option.value = issueKey; 
+                        option.textContent = translations[currentLang][issueKey];
+                        if (issueKey === currentIssueValue) {
+                            option.selected = true;
+                            checkButton.disabled = false;
+                        }
+                        issueSelect.appendChild(option);
+                    });
+                } else {
+                    issueSelect.disabled = true;
+                }
+            } else {
+                issueSelect.disabled = true;
+                checkButton.disabled = true;
+            }
+        }
+
+        // --- Event Listeners ---
+        
+        // 1. Language Selector Listener
+        langSelectorDesktop.addEventListener('change', (event) => {
+            const newLang = event.target.value;
+            langSelectorMobile.value = newLang; // Sync mobile selector
+            translatePage(newLang);
+        });
+         langSelectorMobile.addEventListener('change', (event) => {
+            const newLang = event.target.value;
+            langSelectorDesktop.value = newLang; // Sync desktop selector
+            translatePage(newLang);
+        });
+        
+        // 2. Category Select Listener
+        categorySelect.addEventListener('change', () => {
+             // Reset issue when category changes
+            issueSelect.value = ''; 
+            updateIssues();
+        });
+
+        // 3. Issue Select Listener
+        issueSelect.addEventListener('change', () => {
+            if (issueSelect.value) {
+                checkButton.disabled = false;
+            } else {
+                checkButton.disabled = true;
+            }
+        });
+
+        // 4. Form Submission (Mock)
+        bookingForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+            
+            const categoryText = categorySelect.options[categorySelect.selectedIndex].textContent;
+            const issueText = issueSelect.options[issueSelect.selectedIndex].textContent;
+            
+            if (categorySelect.value && issueSelect.value) {
+                // Displaying a simple translated message (not all message parts are translated for simplicity)
+                const successMessage = translations[currentLang]['S1Head'] + " " + translations[currentLang]['S2Head'];
+                messageBox.textContent = `✅ ${categoryText} -> ${issueText}  - ${successMessage}.`;
+                messageBox.classList.remove('hidden', 'text-gray-600', 'text-red-600');
+                messageBox.classList.add('text-green-600', 'font-semibold');
+                
+                console.log(`Booking submitted for: ${issueText} under ${categoryText}`);
+            } else {
+                messageBox.textContent = `❌ ${translations[currentLang]['IssuePlaceholder']}.`;
+                messageBox.classList.remove('hidden', 'text-green-600');
+                messageBox.classList.add('text-red-600', 'font-semibold');
+            }
+        });
+
+        // 5. Mobile Menu Toggle Logic
+        mobileMenuButton.addEventListener('click', () => {
+            if (mobileMenu.style.display === 'block') {
+                mobileMenu.style.display = 'none';
+            } else {
+                mobileMenu.style.display = 'block';
+            }
+        });
+
+        // --- Initialization ---
+        
+        // Set initial language to Hindi as requested by the user
+        window.onload = function() {
+            langSelectorDesktop.value = currentLang;
+            langSelectorMobile.value = currentLang;
+            translatePage(currentLang);
+        }
+    </script>
+</body>
+</html>
+
